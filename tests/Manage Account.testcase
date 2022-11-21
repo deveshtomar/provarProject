@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="4">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: new (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">new</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">new</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment">
+          <value class="value" valueClass="string">PROD_DEV</value>
+        </argument>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="23" title="On MyPageObject page">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">new</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.MyPageObject"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On MyPageObject page</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="uiTargetUrl"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="24">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="26" title="Assert: Account EqualTo Account1">
+              <arguments>
+                <argument id="expectedValue">
+                  <value class="value" valueClass="string">Account</value>
+                </argument>
+                <argument id="comparisonType">
+                  <value class="value" valueClass="string">EqualTo</value>
+                </argument>
+                <argument id="actualValue">
+                  <value class="value" valueClass="string">Account1</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+                <argument id="numeric">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="retainDecimals">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="nullGreater">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="matchMultiLine">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="matchDotAll">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="failureMessage">
+                  <value class="value" valueClass="string">failed</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.DoWhile" name="DoWhile" testItemId="29" title="While: 5&gt;1">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="condition">
+          <value class="value" valueClass="string">5&gt;1</value>
+        </argument>
+        <argument id="counterName">
+          <value class="value" valueClass="string">LoopCounter</value>
+        </argument>
+        <argument id="counterStart">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="counterEnd">
+          <value class="value" valueClass="decimal">5</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="30">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="31" title="If: {LoopCounter = 3}">
+              <arguments>
+                <argument id="condition">
+                  <value class="eq">
+                    <lhs class="variable">
+                      <path element="LoopCounter"/>
+                    </lhs>
+                    <rhs class="value" valueClass="decimal">3</rhs>
+                  </value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="then" testItemId="32">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Break" name="Break" testItemId="33" title="Break"/>
+                  </steps>
+                </clause>
+                <clause name="else" testItemId="37">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="38" title="Set Values: new">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">new</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">5</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.Finally" name="Finally" testItemId="40" title="Finally: this is final">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">this is final</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="41"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="44" title="Split: 1,2,3,4,5,6=&gt;,=&gt;list">
+      <arguments>
+        <argument id="input">
+          <value class="value" valueClass="string">1,2,3,4,5,6</value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string">,</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">list</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="45" title="For Each: {list}=&gt;result">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="list"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">3</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">result</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="46"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.Switch" name="Switch" testItemId="49" title="Switch: 5">
+      <arguments>
+        <argument id="value">
+          <value class="value" valueClass="string">5</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="case" testItemId="50">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="51" title="Case: 1">
+              <arguments>
+                <argument id="value">
+                  <value class="value" valueClass="string">1</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="string">No</value>
+                </argument>
+                <argument id="alreadyMatched"/>
+                <argument id="switchValue"/>
+              </arguments>
+              <clauses>
+                <clause name="steps" testItemId="52">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="56" title="Set Values: value1">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">value1</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">1</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+        <clause name="case" testItemId="53">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="54" title="Case: 2">
+              <arguments>
+                <argument id="value">
+                  <value class="value" valueClass="string">2</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="string">No</value>
+                </argument>
+                <argument id="alreadyMatched"/>
+                <argument id="switchValue"/>
+              </arguments>
+              <clauses>
+                <clause name="steps" testItemId="55">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="57" title="Set Values: value1">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">value1</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">2</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+        <clause name="case" testItemId="58">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="59" title="Case: 5">
+              <arguments>
+                <argument id="value">
+                  <value class="value" valueClass="string">5</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="string">No</value>
+                </argument>
+                <argument id="alreadyMatched"/>
+                <argument id="switchValue"/>
+              </arguments>
+              <clauses>
+                <clause name="steps" testItemId="60">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="61" title="Set Values: value1">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">value1</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">5</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+        <clause name="case" testItemId="63">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.SwitchCase" name="SwitchCase" testItemId="64" title="Case: 3">
+              <arguments>
+                <argument id="value">
+                  <value class="value" valueClass="string">3</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="string">No</value>
+                </argument>
+                <argument id="alreadyMatched"/>
+                <argument id="switchValue"/>
+              </arguments>
+              <clauses>
+                <clause name="steps" testItemId="65">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="66" title="Set Values: value1">
+                      <arguments>
+                        <argument id="values">
+                          <value class="valueList" mutable="Mutable">
+                            <namedValues mutable="Mutable">
+                              <namedValue name="valuePath">
+                                <value class="value" valueClass="string">value1</value>
+                              </namedValue>
+                              <namedValue name="value">
+                                <value class="value" valueClass="string">3</value>
+                              </namedValue>
+                              <namedValue name="valueScope">
+                                <value class="value" valueClass="string">Test</value>
+                              </namedValue>
+                            </namedValues>
+                          </value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="72" title="On SF Account All Accounts list view">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">new</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=List&amp;listView=AllAccounts"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Account All Accounts list view</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">IfNeccessary</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="73">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="74" title="UI Assert">
+              <arguments>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="Name">
+                      <fieldLocator uri="ui:locator?name=Name&amp;path=List%2FlistView%2FlistTable"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">row</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.WaitFor" name="WaitFor" testItemId="76" title="Wait For: {row.fields.Name.visible = true}=&gt;{10}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="variable">
+              <path element="row"/>
+              <path element="fields"/>
+              <path element="Name"/>
+              <path element="visible"/>
+            </lhs>
+            <rhs class="value" valueClass="boolean">true</rhs>
+          </value>
+        </argument>
+        <argument id="testAtStart"/>
+        <argument id="maxIterations">
+          <value class="value" valueClass="decimal">5</value>
+        </argument>
+        <argument id="sleepSecs">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="77"/>
+      </clauses>
+    </apiCall>
+  </steps>
+</testCase>

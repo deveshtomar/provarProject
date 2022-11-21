@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testProject selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop" selectedEnvironment="prelease">
+  <title>/TestDemo/.testproject</title>
+  <configPath>config</configPath>
+  <testsPath>tests</testsPath>
+  <testPlansPath>plans</testPlansPath>
+  <templatesPath>templates</templatesPath>
+  <sourcePath>src</sourcePath>
+  <secureStoragePath>.secrets</secureStoragePath>
+  <browserDebugPort>0</browserDebugPort>
+  <environments>
+    <environment name="QA">
+      <summary/>
+    </environment>
+    <environment name="prelease">
+      <summary/>
+    </environment>
+    <environment name="TEST">
+      <summary/>
+    </environment>
+  </environments>
+  <variables>
+    <testVariable name="TEST1">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+        </constraints>
+      </valueType>
+      <summary/>
+      <values>
+        <testVariableValue/>
+      </values>
+    </testVariable>
+  </variables>
+  <connectionClasses>
+    <connectionClass name="sf">
+      <connections>
+        <connection id="a5f4dd3e-e730-4e23-a1d7-159ad467e3d8" name="new">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="5d25b5c2-9653-4720-9ddf-d3786f8afcf7" url="sf:user=deveshtomar83@gmail.com;password={password};securityToken={securityToken};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="QA" secureStorageNodeId="f7aa9933-3144-4c69-ad8f-d31eec9d0527" url="sf:user=deveshtomar83@gmail.com;password={password};securityToken={securityToken};environment=SANDBOX;lightningMode=true"/>
+            <connectionUrl envName="prelease" secureStorageNodeId="26f5ef3c-f493-4083-a368-a55462840292" url="sf:user=deveshtomar83@gmail.com;password={password};securityToken={securityToken};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envName="TEST" secureStorageNodeId="05bae1a8-9b6b-4e71-a50e-d9dcb4102ab7" url="sf:user=deveshtomar83@gmail.com;password={password};securityToken={securityToken};environment=PROD_DEV;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+        <connection id="02569137-8fb1-47c6-9114-2997db0094c6" name="newConnection">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="52aeec19-9911-4e6d-9b50-1a9b460cc5ab" url="sf:user=deveshtomar83@gmail.com;password={password};securityToken={securityToken};environment=PROD_DEV;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+        <connection id="27a749df-7517-4c9c-acd3-d0e163641132" name="NewOAuthConnection">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="8b4bff0a-d0d4-4b90-89a5-37aff383f092" url="sf:environment=PROD_DEV;apiLoginUrl=https://provar-7b-dev-ed.develop.my.salesforce.com;identityServiceUrl=https://login.salesforce.com/id/00D5g00000Fpsw3EAB/0055g00000EzLisAAF;clientId={clientId};clientSecret={clientSecret};lightningMode=true;authenticationType=OAUTH;callbackUrl={callbackUrl};accessToken={accessToken};refreshToken={refreshToken}"/>
+          </connectionUrls>
+        </connection>
+        <connection id="1fb045e0-2c2b-4023-acad-98c3d9419602" name="OAuthJWTTest">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="3cb1cd39-b5a7-46ed-8f3b-7b135274e553" url="sf:environment=PROD_DEV;apiLoginUrl=https://provar-7b-dev-ed.develop.my.salesforce.com;identityServiceUrl=https://login.salesforce.com/id/00D5g00000Fpsw3EAB/0055g00000EzLisAAF;clientId={clientId};lightningMode=true;authenticationType=OAUTH_JWT;callbackUrl={callbackUrl};accessToken={accessToken};jwtCertLocation=C:\\Users\\devesh.tomar\\Downloads\\00D5g00000Fpsw3.jks;jwtUsername=deveshtomar83@gmail.com;jwtPassword={jwtPassword};jwtCertAlias=newCert;jwtCertType=JKS"/>
+          </connectionUrls>
+        </connection>
+        <connection id="a082c7b9-0368-49af-ae60-647d95d47108" name="LogOnAsTest">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=deveshtomar83@gmail.com;environment=PROD_DEV;logonAsConnection=new;lightningMode=true"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="webservice">
+      <connections>
+        <connection id="f518f647-6ae2-4b44-8a59-ab84a0077822" name="WebServConTest">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="restservice:url=https://gorest.co.in;authenticationType=NO_AUTHENTICATION">
+              <customHeaders/>
+            </connectionUrl>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="msexc">
+      <connections>
+        <connection id="28b79179-58ab-4255-825d-86f84e1d47e3" name="EmailTestingConn">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="22a9524c-9db8-4b77-b16f-533654e5c579" url="exchange:user=deveshtomar83@outlook.com;password={password}"/>
+          </connectionUrls>
+        </connection>
+        <connection id="c9cef2cf-da3b-4764-83e3-25d48ae62726" name="newOutlookCon">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="31f45ab9-ef8b-448a-910a-3db6894dd04f" url="exchange:user=deveshtomar83@outlook.com;password={password};serverType=EWS;hostName=outlook.office365.com"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="google">
+      <connections>
+        <connection id="1e4de5f3-1425-4bbd-96e2-b862b980cc5a" name="GmailConnTest">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="3d5f19fc-86e8-4886-b413-65e1eb67c887" url="google:user=devesh.tomar@provartesting.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1667460494000"/>
+          </connectionUrls>
+        </connection>
+        <connection id="c7d798c4-9cb2-49bf-b3ce-985f5512fa97" name="NewGmailConn">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="94ac8752-0f88-45db-8dbe-84ab2be2e968" url="google:user=deveshtomar83@gmail.com;password={password};authenticationType=PASSWORD"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="ui">
+      <connections>
+        <connection id="38e55971-0e81-44c5-9d25-338a1816b15d" name="UITest">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=https://www.w3schools.com/"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+  </connectionClasses>
+  <tagTypes>
+    <tagType name="owner" tagClass="owner" title="Business Owner">
+      <summary>The person or team that owns a Test Case on the business side</summary>
+      <tags>
+        <tag name="Test">
+          <summary/>
+        </tag>
+      </tags>
+    </tagType>
+    <tagType name="functionalarea" tagClass="functionalarea" title="Functional Area">
+      <summary>The functional area that a Test Item belongs to</summary>
+      <tags>
+        <tag name="newTag">
+          <summary/>
+        </tag>
+      </tags>
+    </tagType>
+    <tagType name="sla" tagClass="sla" title="SLA Requirement">
+      <summary>Service Level Agreement requirement</summary>
+      <tags>
+        <slaTag expectedDurationMs="1000" maximumDurationMs="2000" name="SLATest">
+          <summary/>
+        </slaTag>
+      </tags>
+      <tagTypeTargets>
+        <tagTypeTarget targetName="com.provar.core.model.test.api.ITestItem"/>
+      </tagTypeTargets>
+    </tagType>
+    <tagType name="maintainer" tagClass="maintainer" title="Test Case Maintainer">
+      <summary>The person or team responsible for maintaining a Test Case</summary>
+      <tags>
+        <tag name="Agent">
+          <summary>Shows maintainer of test case</summary>
+        </tag>
+      </tags>
+    </tagType>
+  </tagTypes>
+  <browserConfigurations>
+    <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">
+      <summary>Full screen with Test Builder adjustment</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1024" browserWidthType="Pixels" name="1024x768">
+      <summary>Fixed 1024x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="800" browserHeightType="Pixels" browserWidth="1280" browserWidthType="Pixels" name="1280x800">
+      <summary>Fixed 1280x800</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="768" browserHeightType="Pixels" browserWidth="1366" browserWidthType="Pixels" name="1366x768">
+      <summary>Fixed 1366x768</summary>
+    </browserConfiguration>
+    <browserConfiguration browserHeight="1080" browserHeightType="Pixels" browserWidth="1920" browserWidthType="Pixels" name="1920x1080">
+      <summary>Fixed 1920x1080</summary>
+    </browserConfiguration>
+  </browserConfigurations>
+  <testCyclePath>TestCycle</testCyclePath>
+  <browserApplications>
+    <browserApplication connectionTypes="sf" name="Salesforce1">
+      <properties>
+        <browserPlatformProperty name="browserName" platform="IOS" type="DesiredCapability" value="Safari"/>
+        <browserPlatformProperty name="browserName" platform="ANDROID" type="DesiredCapability" value="Chrome"/>
+      </properties>
+    </browserApplication>
+    <browserApplication connectionTypes="sf" name="ServiceMax FSA">
+      <properties>
+        <browserPlatformProperty name="bundleId" platform="IOS" type="DesiredCapability" value="com.servicemaxinc.svmxfieldserviceapp"/>
+        <browserPlatformProperty name="app" platform="DESKTOP" type="DesiredCapability" value="C:\\Program Files\\ServiceMax\\ServiceMax Field Service\\Laptop Mobile.exe"/>
+      </properties>
+    </browserApplication>
+  </browserApplications>
+  <browserProviders>
+    <browserProvider name="Desktop" type="SeleniumLocal">
+      <devices>
+        <browserProviderDevice name="Full Screen">
+          <properties>
+            <browserPlatformProperty name="summary" value="Full screen with Test Builder adjustment"/>
+            <browserPlatformProperty name="browserHeightType" value="Full"/>
+            <browserPlatformProperty name="browserWidthType" value="Full"/>
+            <browserPlatformProperty name="adjustBrowserWidthForChromeIde" value="true"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1024x768">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1024x768"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="768"/>
+            <browserPlatformProperty name="browserWidth" value="1024"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1280x800">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1280x800"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="800"/>
+            <browserPlatformProperty name="browserWidth" value="1280"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1366x768">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1366x768"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="768"/>
+            <browserPlatformProperty name="browserWidth" value="1366"/>
+          </properties>
+        </browserProviderDevice>
+        <browserProviderDevice name="1920x1080">
+          <properties>
+            <browserPlatformProperty name="summary" value="Fixed 1920x1080"/>
+            <browserPlatformProperty name="browserHeightType" value="Pixels"/>
+            <browserPlatformProperty name="browserWidthType" value="Pixels"/>
+            <browserPlatformProperty name="browserHeight" value="1080"/>
+            <browserPlatformProperty name="browserWidth" value="1920"/>
+          </properties>
+        </browserProviderDevice>
+      </devices>
+      <properties/>
+    </browserProvider>
+  </browserProviders>
+</testProject>

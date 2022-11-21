@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="1" registryId="c8a51ce4-9f2b-400d-804e-bccda503e5ee" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: {resultName} ({resultScope})">
+      <arguments>
+        <argument argId="2c37bd60-1c19-40ff-8a30-25bd09cb7916" id="connectionName">
+          <value class="value" valueClass="string">new</value>
+        </argument>
+        <argument argId="b533baa1-b19e-48d0-bfbe-2df1c57f2cd9" id="resultName">
+          <value class="variable">
+            <path element="resultName"/>
+          </value>
+        </argument>
+        <argument argId="9418b637-5c46-4791-8623-52438093f043" id="resultScope">
+          <value class="variable">
+            <path element="resultScope"/>
+          </value>
+        </argument>
+        <argument argId="06172da6-be01-4bda-882e-9ffb06ae6fcd" id="uiApplicationName">
+          <value class="variable">
+            <path element="uiApplicationName"/>
+          </value>
+        </argument>
+        <argument argId="adefd9a3-74a2-4ec6-9b3d-4bf26c3bad57" id="quickUiLogin">
+          <value class="variable">
+            <path element="quickUiLogin"/>
+          </value>
+        </argument>
+        <argument argId="4847d8d6-58f5-48bd-9149-6ef4cb9efa82" id="closeAllPrimaryTabs">
+          <value class="variable">
+            <path element="closeAllPrimaryTabs"/>
+          </value>
+        </argument>
+        <argument argId="456cca00-90be-475b-ac07-6ae8ae051571" id="reuseConnectionName"/>
+        <argument argId="bc27cb85-81c6-4598-b41d-a11c95d21e42" id="alreadyOpenBehaviour">
+          <value class="variable">
+            <path element="alreadyOpenBehaviour"/>
+          </value>
+        </argument>
+        <argument argId="40bef3e0-02af-4feb-9521-a2b4ab77130d" id="privateBrowsingMode">
+          <value class="variable">
+            <path element="privateBrowsingMode"/>
+          </value>
+        </argument>
+        <argument argId="b5133933-6767-486a-b411-90228a19dcda" id="enableObjectIdLogging">
+          <value class="variable">
+            <path element="enableObjectIdLogging"/>
+          </value>
+        </argument>
+        <argument argId="ffb79fc6-af22-4eb5-88c2-73ee092eca4a" id="autoCleanup">
+          <value class="variable">
+            <path element="autoCleanup"/>
+          </value>
+        </argument>
+        <argument argId="2d6f141b-bb0f-482b-ac6f-1b3b248a769b" id="cleanupConnectionName"/>
+        <argument argId="ec24bb61-b5d4-47e4-908e-7c8ad45a5ecc" id="logFileLocation">
+          <value class="variable">
+            <path element="logFileLocation"/>
+          </value>
+        </argument>
+        <argument argId="7ae1b577-0562-4e37-9c61-18734ee55126" id="username"/>
+        <argument argId="79789875-7002-4536-bd14-22322c3504c4" id="password"/>
+        <argument argId="7ec81dd8-1ab1-445c-87c0-fe9938a2765b" id="securityToken"/>
+        <argument argId="47117fcb-4a00-43b9-8f06-c9e48b97474d" id="environment">
+          <value class="variable">
+            <path element="environment"/>
+          </value>
+        </argument>
+        <argument argId="d8941a6f-92f9-4f08-98d4-76157304a3c1" id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument argId="8485e3fd-f11c-4f0d-913b-3fdba0b75105" id="webBrowser"/>
+      </arguments>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:bc27cb85-81c6-4598-b41d-a11c95d21e42" name="newConnection" title="If already open">
+      <summary>What should happen if a connection with the same Result Name is already open.\r\n\r\nWARNING: Setting this to Reuse can be dangerous (see remarks).</summary>
+      <type>
+        <choiceType>
+          <constraints>
+            <valueConstraint name="boundedValues">Fail:Fail the Test|Reopen:Re-open the Connection|Reuse:Re-use the Connection</valueConstraint>
+            <valueConstraint name="unrestricted">false</valueConstraint>
+          </constraints>
+        </choiceType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:b533baa1-b19e-48d0-bfbe-2df1c57f2cd9" name="resultName" title="Result Name">
+      <summary>The name that the resulting connection will be stored under.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:9418b637-5c46-4791-8623-52438093f043" name="resultScope" title="Result Scope">
+      <summary>How long the resulting connection will remain open for.</summary>
+      <type>
+        <choiceType>
+          <constraints>
+            <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+          </constraints>
+        </choiceType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:06172da6-be01-4bda-882e-9ffb06ae6fcd" name="uiApplicationName" title="Salesforce Application">
+      <summary>The Salesforce application that will be tested.  Must be set if you want to test a Console application.</summary>
+      <type>
+        <choiceType>
+          <constraints>
+            <valueConstraint name="valuesSource">com.provar.plugins.sf.eclipse.ui:com.provar.plugins.forcedotcom.ui.valuesources.SfApplicationsChoiceListValuesSource</valueConstraint>
+            <valueConstraint name="valuesSourceDependencies">connectionName</valueConstraint>
+          </constraints>
+        </choiceType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:adefd9a3-74a2-4ec6-9b3d-4bf26c3bad57" name="quickUiLogin" title="Quick Login">
+      <summary>Whether the username and password should be encoded in the page URL rather than going through the standard Salesforce Log In screen. Not applicable for Salesforce OAuth connection</summary>
+      <type>
+        <booleanType nullable="false"/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:4847d8d6-58f5-48bd-9149-6ef4cb9efa82" name="closeAllPrimaryTabs" title="Close all console tabs">
+      <summary>Whether all Primary Tabs should be closed at the start of the test.  Only applies for Salesforce console applications (e.g. Service Console).</summary>
+      <type>
+        <booleanType nullable="false"/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:bc27cb85-81c6-4598-b41d-a11c95d21e42" name="alreadyOpenBehaviour" title="If already open">
+      <summary>What should happen if a connection with the same Result Name is already open.\r\n\r\nWARNING: Setting this to Reuse can be dangerous (see remarks).</summary>
+      <type>
+        <choiceType>
+          <constraints>
+            <valueConstraint name="boundedValues">Fail:Fail the Test|Reopen:Re-open the Connection|Reuse:Re-use the Connection</valueConstraint>
+          </constraints>
+        </choiceType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:40bef3e0-02af-4feb-9521-a2b4ab77130d" name="privateBrowsingMode" title="Private Browsing Mode">
+      <summary>Whether web browser should run in Private Browsing or Incognito mode.</summary>
+      <type>
+        <booleanType nullable="false"/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:b5133933-6767-486a-b411-90228a19dcda" name="enableObjectIdLogging" title="Enable Object Id Logging">
+      <summary>Whether inserted Object Ids should be recorded.</summary>
+      <type>
+        <booleanType nullable="false"/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:ffb79fc6-af22-4eb5-88c2-73ee092eca4a" name="autoCleanup" title="Auto Cleanup">
+      <summary>Whether the recorded Object Ids should be deleted before the connection is closed.</summary>
+      <type>
+        <booleanType nullable="false"/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:47117fcb-4a00-43b9-8f06-c9e48b97474d" name="environment" title="Environment override">
+      <summary>Allows the environment to be changed from the value in the Connection. Not applicable for Salesforce OAuth connection</summary>
+      <type>
+        <choiceType>
+          <constraints>
+            <valueConstraint name="boundedValues">PROD_DEV:Production/Developer Edition|SANDBOX:Sandbox|PRERELEASE:Prerelease|OTHER:Other</valueConstraint>
+          </constraints>
+        </choiceType>
+      </type>
+    </param>
+  </params>
+  <outputParams>
+    <param name="new" title="new">
+      <summary>The name that the resulting connection will be stored under.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="new"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="newConnection">
+      <value class="value" valueClass="string">Fail</value>
+    </argument>
+    <argument id="resultName">
+      <value class="value" valueClass="string">new</value>
+    </argument>
+    <argument id="resultScope">
+      <value class="value" valueClass="string">Test</value>
+    </argument>
+    <argument id="uiApplicationName">
+      <value class="value" valueClass="string">Sales</value>
+    </argument>
+    <argument id="quickUiLogin">
+      <value class="value" valueClass="boolean">true</value>
+    </argument>
+    <argument id="closeAllPrimaryTabs">
+      <value class="value" valueClass="boolean">true</value>
+    </argument>
+    <argument id="alreadyOpenBehaviour">
+      <value class="variable">
+        <path element="newConnection"/>
+      </value>
+    </argument>
+    <argument id="privateBrowsingMode">
+      <value class="value" valueClass="boolean">false</value>
+    </argument>
+    <argument id="enableObjectIdLogging">
+      <value class="value" valueClass="boolean">true</value>
+    </argument>
+    <argument id="autoCleanup">
+      <value class="value" valueClass="boolean">false</value>
+    </argument>
+    <argument id="environment">
+      <value class="variable">
+        <path element="QA"/>
+      </value>
+    </argument>
+  </args>
+  <outputArgs>
+    <outputArgument id="new">
+      <name class="value" valueClass="string">new</name>
+    </outputArgument>
+  </outputArgs>
+  <parameterValueSources>
+    <parameterValueSource variableName="SourceData" variableScope="Test"/>
+  </parameterValueSources>
+</testCase>
